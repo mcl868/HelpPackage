@@ -1,0 +1,12 @@
+Package: HelpPackage
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.0
+Author: Thomas Maltesen
+Maintainer: Thomas Maltesen <mcl868@alumni.ku.dk>
+Description: HelpPackage.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Imports: Rcpp (>= 0.12.7)
+LinkingTo: Rcpp
