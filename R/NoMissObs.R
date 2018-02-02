@@ -10,11 +10,11 @@ RemoveMissingObervation<-function(data, output, var.list, global=TRUE, ...){
         }
         message(paste("Name of dataset is:",NewName))
       }
-  
+
       if(missing(var.list)){
         TempData<-na.omit(data)
       } else {
-        TempData<-data[eval(parse(text=paste0("!is.na(data$",var.list,")",collapse = " & "))),])
+        TempData<-data[eval(parse(text=paste0("!is.na(data$",var.list,")",collapse = " & "))),]
       }
       message(paste(NameOfData,"is reduced from",nrow(data),"to",nrow(TempData)))
 
@@ -25,9 +25,9 @@ RemoveMissingObervation<-function(data, output, var.list, global=TRUE, ...){
         return(TempData)
       }
     } else {
-      message(paste(NameOfData,"is not a data.frame")))
+      message(paste(NameOfData,"is not a data.frame"))
     }
   } else {
-    message(paste(NameOfData,"is not a data.frame")))
+    message(paste(NameOfData,"is not a data.frame"))
   }
 }
