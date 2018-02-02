@@ -1,0 +1,5 @@
+#NoMissObs<-function(data, output, var.list, ...){
+#  if(missing(output)){
+#    deparse(substitute(data))
+#  }
+#}
