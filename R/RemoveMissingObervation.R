@@ -25,7 +25,7 @@ RemoveMissingObervation<-function(data, output, var.list, global=TRUE, ...){
         return(TempData)
       }
     } else {
-      message(paste(NameOfData,"is not a data.frame"))
+      message("global is either TRUE or FALSE"))
     }
   } else {
     message(paste(NameOfData,"is not a data.frame"))
