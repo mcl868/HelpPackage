@@ -1,6 +1,6 @@
 Display.est<-function(est, varest, digits = 4, ...){
   if(nrow(varest)==ncol(varest)){
-  varestM<-matrix(sapply(1:2,function(i)varest[i,i]))
+  varestM<-matrix(sapply(1:nrow(varest),function(i)varest[i,i]))
   } else {
   varestM<-varest
   }
