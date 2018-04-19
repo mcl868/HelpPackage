@@ -1,5 +1,11 @@
 Display.est<-function(est, varest, digits = 4, ...){
-  Disp<-cbind(est, sqrt(varest), est-1.96*sqrt(varest), est+1.96*sqrt(varest))
+  if(nrow(varest)==ncol(varest)){
+  varestM<-matrix(sapply(1:2,function(i)varest[i,i]))
+  } else {
+  varestM<-varest
+  }
+  Disp<-cbind(est, sqrt(varestM), est-1.96*sqrt(varestM), est+1.96*sqrt(varestM))
   colnames(Disp)<-c("Est","Std.err","Lower","Upper")
-  return(Disp)
+  rownames(Disp)<-colnames(est)
+  return(round(Disp,digits))
 }
