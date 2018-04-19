@@ -6,6 +6,6 @@ Display.est<-function(est, varest, digits = 4, ...){
   }
   Disp<-cbind(est, sqrt(varestM), est-1.96*sqrt(varestM), est+1.96*sqrt(varestM))
   colnames(Disp)<-c("Est","Std.err","Lower","Upper")
-  rownames(Disp)<-colnames(est)
+  rownames(Disp)<-rownames(est)
   return(round(Disp,digits))
 }
