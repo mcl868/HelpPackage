@@ -8,7 +8,7 @@ DataToMonotone<-function(data, orderSeq, redu, ...){
   
   data2<-data1[eval(parse(text=paste0("data1$",orderSeq[ma],"_R==1"))),]
   data2$C<-rowSums(
-  eval(parse(text=paste0("data2$C<-rowSums(data2$",orderSeq,"_R")))
+  eval(parse(text=paste0("data2$C<-rowSums(data2[,c(",paste0(orderSeq,"_R",collapse =" ,"),"]")))
   data2$MONOTONE<-NA
   
   for(j in 1:nrow(data2)){
