@@ -7,7 +7,6 @@ DataToMonotone<-function(data, orderSeq, redu, ...){
     }}
   
   data2<-data1[eval(parse(text=paste0("data1$",orderSeq[ma],"_R==1"))),]
-  data2$C<-rowSums(
   eval(parse(text=paste0("data2$C<-rowsum(data2[,c(",paste0(orderSeq,"_R",collapse =" ,"),"])")))
   data2$MONOTONE<-NA
   
