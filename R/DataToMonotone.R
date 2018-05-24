@@ -1,4 +1,4 @@
-DataToMonotone<-function(data, orderSeq, ...){
+DataToMonotone<-function(data, orderSeq, redu, ...){
   data1<-data[,orderSeq]
   ma<-length(orderSeq)
   for(i in 1:ma){
@@ -13,5 +13,7 @@ DataToMonotone<-function(data, orderSeq, ...){
    data2$MONOTONE[j]<-
    all(sapply(1:(ma-1),function(i)eval(parse(text=paste0("data2$",orderSeq[i],"_R[j]<=","data2$",orderSeq[i+1],"_R[j]")))))
     }
+
+  if(!missing(redu))data2<-data2[data2$MONOTONE=redu,]
   return(data2)
 }
