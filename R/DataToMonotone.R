@@ -7,11 +7,13 @@ DataToMonotone<-function(data, orderSeq, redu, ...){
     }}
   
   data2<-data1[eval(parse(text=paste0("data1$",orderSeq[ma],"_R==1"))),]
+  data2$C<-rowSums(
+  eval(parse(text=paste0("data2$C<-rowSums(data2$",orderSeq,"_R")))
   data2$MONOTONE<-NA
   
- for(j in 1:nrow(data2)){
-   data2$MONOTONE[j]<-
-   all(sapply(1:(ma-1),function(i)eval(parse(text=paste0("data2$",orderSeq[i],"_R[j]<=","data2$",orderSeq[i+1],"_R[j]")))))
+  for(j in 1:nrow(data2)){
+    data2$MONOTONE[j]<-
+    all(sapply(1:(ma-1),function(i)eval(parse(text=paste0("data2$",orderSeq[i],"_R[j]<=","data2$",orderSeq[i+1],"_R[j]")))))
     }
 
   if(!missing(redu))data2<-data2[data2$MONOTONE==redu,]
