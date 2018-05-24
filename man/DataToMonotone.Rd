@@ -20,6 +20,7 @@ DataToMonotone(data, orderSeq, redu, ...)
 }
   \item{redu}{
 }
+}
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
