@@ -1,9 +1,11 @@
 Lambdaprob<-function(object, ...){
   if(inherits(object,"DataToMonotoneMissing")){
-    if(all(object$MONOTONE)){
 
-      objdata<-object$data
-      orderSeqObj<-object$orderSeqObj
+    objdata<-object$data
+    orderSeqObj<-object$orderSeqObj
+    
+    if(all(orderSeqObj$MONOTONE)){
+
   
       for(cV in 1:(length(orderSeqObj)-1)){
         LV<-length(orderSeqObj):((length(orderSeqObj)+1)-cV)
