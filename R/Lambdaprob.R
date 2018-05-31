@@ -4,7 +4,7 @@ Lambdaprob<-function(object, ...){
     objdata<-object$data
     orderSeqObj<-object$orderSeqObj
     
-    if(all(orderSeqObj$MONOTONE)){
+    if(all(objdata$MONOTONE)){
 
   
       for(cV in 1:(length(orderSeqObj)-1)){
