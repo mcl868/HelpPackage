@@ -18,10 +18,10 @@ Lambdaprob<-function(object, ...){
         eval(parse(text=paste0("objdata$lambda",cV,"[objdata$C>=cV]<-p")))
         }
       eval(parse(text=
-                   paste0("objdata$lambda",length(orderSeqObj),"<-",paste0("(1-objdata$lambda",c(1:(length(orderSeqObj)-1)),")",collapse = "*"))
+                   paste0("objdata$varpiInf<-",paste0("(1-objdata$lambda",c(1:(length(orderSeqObj)-1)),")",collapse = "*"))
       ))
       objdata$R<-NULL
-      eval(parse(text=paste0("objdata$lambda",length(orderSeqObj),"[objdata$C<Inf]<-NA")))
+      eval(parse(text=paste0("objdata$varpiInf[objdata$C<Inf]<-NA")))
      
     } else message("Not all object of MONOTONE are TRUE")}
   out<-objdata
