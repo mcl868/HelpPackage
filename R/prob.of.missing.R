@@ -24,6 +24,8 @@ prob.of.missing<-function(object, augspace = FALSE, ...){
         for(jj in 1:(length(orderSeqObj)-1)){
           eval(parse(text=paste0("objdata$K",jj,"<-",paste0("(1-objdata$lambda",c(1:jj),")",collapse = "*"))))
         }
+      r<-1:(length(orderSeqObj)-1)
+      eval(parse(text=paste0("objdata$aug",r,"<-(1*(objdata$C==",r,")-objdata$lambda",r,"*1*(objdata$C>=",r,"))/objdata$K",r)))
       }
       if(!augspace){
           for(jj in (length(orderSeqObj)-1):2){
