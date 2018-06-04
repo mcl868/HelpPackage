@@ -29,7 +29,7 @@ print(form)
         p<-predict(glm(form, data=objdata[objdata$C>=cV,],family = binomial(link = "logit")),type="response")
 
 asasas<-glm(form, data=objdata[objdata$C>=cV,],family = binomial(link = "logit"))
-print(asasas$formula)
+print(paste0("R ~ ",paste0(names(asasas$coef),collapse = " + ")))
 
         eval(parse(text=paste0("objdata$lambda",cV,"[objdata$C>=cV]<-p")))
       }
