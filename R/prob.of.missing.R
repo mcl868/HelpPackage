@@ -1,4 +1,4 @@
-prob.of.missing<-function(object, regression, augspace = FALSE, ...){
+prob.of.missing<-function(object, regression, augspace = FALSE, regList, ...){
   if(inherits(object,"DataToMonotoneMissing")){
     
     objdata<-object$data
@@ -13,6 +13,7 @@ prob.of.missing<-function(object, regression, augspace = FALSE, ...){
       }
       
       for(cV in 1:(length(orderSeqObj)-1)){
+        if(missing(regList)){
         LV<-length(orderSeqObj):((length(orderSeqObj)+1)-cV)
         
         objdata$R<-1*(objdata$C==cV)
@@ -24,9 +25,12 @@ prob.of.missing<-function(object, regression, augspace = FALSE, ...){
         if("higherorder" %in% unlist(strsplit(regression,split = "[.]"))){
           order<-as.numeric(unlist(strsplit(regression,split = "[.]"))[!unlist(strsplit(regression,split = "[.]")) %in% "higherorder"])
           form<-as.formula(paste0("R ~ ",paste0(unlist(lapply(1:order, function(i)paste0("I(",orderSeqObj[LV],"^",i,")"))),collapse=" + ")))
+        }} else {
+          form<-regList[[cV]]
         }
-
         p<-predict(glm(form, data=objdata[objdata$C>=cV,],family = binomial(link = "logit")),type="response")
+        }
+       
 
         eval(parse(text=paste0("objdata$lambda",cV,"[objdata$C>=cV]<-p")))
       }
