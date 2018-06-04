@@ -11,7 +11,6 @@ prob.of.missing<-function(object, regression, augspace = FALSE, regList, ...){
       
       if(missing(regList)){
         if(missing(regression)){
-          cV<-list()
           regression<-"simple"
           message("regression is simple")
         }
@@ -32,7 +31,6 @@ prob.of.missing<-function(object, regression, augspace = FALSE, regList, ...){
             formCharac<-paste0("R ~ ",paste0(unlist(lapply(1:order, function(i)paste0("I(",orderSeqObj[LV],"^",i,")"))),collapse=" + "))
           }
           form<-as.formula(formCharac)
-          regList[[cV]]<-formCharac
           } else {
             form<-as.formula(regList[[cV]])
             objdata$R<-1*(objdata$C==cV)
@@ -58,7 +56,6 @@ prob.of.missing<-function(object, regression, augspace = FALSE, regList, ...){
       }
       objdata$varpi1<-objdata$lambda1;objdata$lambda1<-NULL
     }
-    objdata$RegressioList<-regList
     objdata$R<-NULL
     eval(parse(text=paste0("objdata$varpiInf[objdata$C<Inf]<-NA")))
     
