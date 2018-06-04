@@ -7,14 +7,26 @@ prob.of.missing<-function(object, augspace = FALSE, ...){
     if(all(objdata$MONOTONE)){
       eval(parse(text=paste0("objdata$",orderSeqObj,"_R<-NULL")))
       
+      if(missing(regression)){
+        regression<-"simple"
+        message("regression is simple")
+      }
+      
       for(cV in 1:(length(orderSeqObj)-1)){
         LV<-length(orderSeqObj):((length(orderSeqObj)+1)-cV)
         
         objdata$R<-1*(objdata$C==cV)
         
-        p<-predict(
-          glm(as.formula(paste0("R ~ ",paste0(orderSeqObj[LV],collapse=" + "))), data=objdata[objdata$C>=cV,],family = binomial(link = "logit")),
-          type="response")
+        if(regression=="simple")
+          form<-as.formula(paste0("R ~ ",paste0(orderSeqObj[LV],collapse=" + ")))
+        if(regression=="interaction")
+          form<-as.formula(paste0("R ~ ",paste0(orderSeqObj[LV],collapse=" * ")))
+        if("higherorder" %in% unlist(strsplit(regression,split = "[.]"))){
+          order<-as.numeric(unlist(strsplit(regression,split = "[.]"))[!unlist(strsplit(regression,split = "[.]")) %in% "higherorder"])
+          form<-as.formula(paste0("R ~ ",paste0(unlist(lapply(1:order, function(i)paste0("I(",orderSeqObj[LV],"^",i,")"))),collapse=" + ")))
+        }
+print(form)
+        p<-predict(glm(form, data=objdata[objdata$C>=cV,],family = binomial(link = "logit")),type="response")
         eval(parse(text=paste0("objdata$lambda",cV,"[objdata$C>=cV]<-p")))
       }
       eval(parse(text=
