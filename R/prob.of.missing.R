@@ -11,6 +11,7 @@ prob.of.missing<-function(object, regression, augspace = FALSE, regList, ...){
       
       if(missing(regList)){
         if(missing(regression)){
+          cV<-list()
           regression<-"simple"
           message("regression is simple")
         }
@@ -23,13 +24,16 @@ prob.of.missing<-function(object, regression, augspace = FALSE, regList, ...){
           objdata$R<-1*(objdata$C==cV)
           
           if(regression=="simple")
-            form<-as.formula(paste0("R ~ ",paste0(orderSeqObj[LV],collapse=" + ")))
+            formCharac<-paste0("R ~ ",paste0(orderSeqObj[LV],collapse=" + "))
           if(regression=="interaction")
-            form<-as.formula(paste0("R ~ ",paste0(orderSeqObj[LV],collapse=" * ")))
+            formCharac<-paste0("R ~ ",paste0(orderSeqObj[LV],collapse=" * "))
           if("higherorder" %in% unlist(strsplit(regression,split = "[.]"))){
             order<-as.numeric(unlist(strsplit(regression,split = "[.]"))[!unlist(strsplit(regression,split = "[.]")) %in% "higherorder"])
-            form<-as.formula(paste0("R ~ ",paste0(unlist(lapply(1:order, function(i)paste0("I(",orderSeqObj[LV],"^",i,")"))),collapse=" + ")))
-          }} else {
+            formCharac<-paste0("R ~ ",paste0(unlist(lapply(1:order, function(i)paste0("I(",orderSeqObj[LV],"^",i,")"))),collapse=" + "))
+          }
+          form<-as.formula(formCharac)
+          regList[[cV]]<-formCharac
+          } else {
             form<-as.formula(regList[[cV]])
             objdata$R<-1*(objdata$C==cV)
           }
@@ -54,7 +58,7 @@ prob.of.missing<-function(object, regression, augspace = FALSE, regList, ...){
       }
       objdata$varpi1<-objdata$lambda1;objdata$lambda1<-NULL
     }
-    
+    objdata$RegressioList<-regList
     objdata$R<-NULL
     eval(parse(text=paste0("objdata$varpiInf[objdata$C<Inf]<-NA")))
     
