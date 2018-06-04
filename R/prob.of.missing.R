@@ -28,7 +28,8 @@ prob.of.missing<-function(object, regression, augspace = FALSE, ...){
 print(form)
         p<-predict(glm(form, data=objdata[objdata$C>=cV,],family = binomial(link = "logit")),type="response")
 
-print(glm(form, data=objdata[objdata$C>=cV,],family = binomial(link = "logit"))$formula)
+asasas<-glm(form, data=objdata[objdata$C>=cV,],family = binomial(link = "logit"))$formula
+print(asasas)
 
         eval(parse(text=paste0("objdata$lambda",cV,"[objdata$C>=cV]<-p")))
       }
