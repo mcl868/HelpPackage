@@ -8,17 +8,21 @@ prob.of.missing
   A concise (1-5 lines) description of what the function does. 
 }
 \usage{
-prob.of.missing(data, orderSeq, redu, ...)
+prob.of.missing(object, regression, augspace = FALSE, regList, ...) 
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{data}{
+  \item{object}{
 %%     ~~Describe \code{x} here~~
 }
-  \item{orderSeq}{
+  \item{regression}{
 %%     ~~Describe \code{x} here~~
 }
-  \item{redu}{
+  \item{augspace}{
+%%     ~~Describe \code{x} here~~
+}
+  \item{regList}{
+%%     ~~Describe \code{x} here~~
 }
 }
 \details{
