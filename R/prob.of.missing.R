@@ -25,11 +25,8 @@ prob.of.missing<-function(object, regression, augspace = FALSE, ...){
           order<-as.numeric(unlist(strsplit(regression,split = "[.]"))[!unlist(strsplit(regression,split = "[.]")) %in% "higherorder"])
           form<-as.formula(paste0("R ~ ",paste0(unlist(lapply(1:order, function(i)paste0("I(",orderSeqObj[LV],"^",i,")"))),collapse=" + ")))
         }
-print(form)
-        p<-predict(glm(form, data=objdata[objdata$C>=cV,],family = binomial(link = "logit")),type="response")
 
-asasas<-glm(form, data=objdata[objdata$C>=cV,],family = binomial(link = "logit"))
-print(paste0("R ~ ",paste0(names(asasas$coef),collapse = " + ")))
+        p<-predict(glm(form, data=objdata[objdata$C>=cV,],family = binomial(link = "logit")),type="response")
 
         eval(parse(text=paste0("objdata$lambda",cV,"[objdata$C>=cV]<-p")))
       }
