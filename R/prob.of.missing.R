@@ -28,7 +28,7 @@ prob.of.missing<-function(object, regression, augspace = FALSE, regList, ...){
             order<-as.numeric(unlist(strsplit(regression,split = "[.]"))[!unlist(strsplit(regression,split = "[.]")) %in% "higherorder"])
             formCharac<-paste0("R ~ ",paste0(unlist(lapply(1:order, function(i)paste0("I(",orderSeqObj[LV],"^",i,")"))),collapse=" + "))
           }
-print(formCharac)
+
           form<-as.formula(formCharac)
           } else {
             form<-as.formula(regList[[cV]])
