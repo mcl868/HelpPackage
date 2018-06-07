@@ -4,6 +4,7 @@ print.DataToMonotoneMissing<-function(x){
   if(isTRUE(x$reduObj)){
     cat("Montone:\n")
     print(table(x$data$C))
+  } else {
+    print(table(x$data$C))
   }
-  print(table(x$data$C))
 }
