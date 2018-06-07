@@ -58,7 +58,7 @@ prob.of.missing<-function(object, regression, augspace = FALSE, regList, ...){
     objdata$R<-NULL
     eval(parse(text=paste0("objdata$varpiInf[objdata$C<Inf]<-NA")))
     
-  } else message("Not all object of MONOTONE are TRUE")}
+  } else message("Not all object are MONOTONE missing. Change redu to TRUE")}
 out<-objdata
 return(out)
 }
