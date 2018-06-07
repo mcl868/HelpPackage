@@ -1,4 +1,4 @@
-print.DataToMonotoneMissing<-function(x){
+print.DataToMonotoneMissing<-function(x, digits=4, ...){
   cat("head:\n")
   cat(paste0("Reduced: ",x$reduObj,".\n"))
   if(isTRUE(x$reduObj)){
