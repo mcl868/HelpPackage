@@ -1,6 +1,6 @@
 print.DataToMonotoneMissing<-function(x){
   cat("head:\n")
-  cat("Reduced: ",x$reduObj,".\n")
+  cat(paste0("Reduced: ",x$reduObj,".\n"))
   if(isTRUE(x$reduObj)){
     cat("Montone:\n")
     print(table(x$data$C))
