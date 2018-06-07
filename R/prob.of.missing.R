@@ -1,5 +1,3 @@
-
-
 prob.of.missing<-function(object, regression, augspace = FALSE, regList, ...){
   if(inherits(object,"DataToMonotoneMissing")){
     
@@ -18,7 +16,7 @@ prob.of.missing<-function(object, regression, augspace = FALSE, regList, ...){
       
       for(cV in 1:(length(orderSeqObj)-1)){
         if(missing(regList)){
-          LV<-length(orderSeqObj):((length(orderSeqObj)+1)-cV)
+          LV<-1:cV
           
           objdata$R<-1*(objdata$C==cV)
           
@@ -30,6 +28,7 @@ prob.of.missing<-function(object, regression, augspace = FALSE, regList, ...){
             order<-as.numeric(unlist(strsplit(regression,split = "[.]"))[!unlist(strsplit(regression,split = "[.]")) %in% "higherorder"])
             formCharac<-paste0("R ~ ",paste0(unlist(lapply(1:order, function(i)paste0("I(",orderSeqObj[LV],"^",i,")"))),collapse=" + "))
           }
+print(formCharac)
           form<-as.formula(formCharac)
           } else {
             form<-as.formula(regList[[cV]])
