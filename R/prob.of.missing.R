@@ -1,4 +1,4 @@
-prob.of.missing<-function(object, regression, augspace = TRUE, regList, ...){
+prob.of.missing<-function(object, regression, augspace = TRUE, completecase = FASLE, regList, ...){
   if(inherits(object,"DataToMonotoneMissing")){
     
     objdata<-object$data
@@ -59,6 +59,9 @@ prob.of.missing<-function(object, regression, augspace = TRUE, regList, ...){
     eval(parse(text=paste0("objdata$varpiInf[objdata$C<Inf]<-NA")))
 
     objdata$varpiInfINV<-1/objdata$varpiInf
+    if(completecase){
+      objdata<-objdata[objdata$C==Inf,]
+    }
 
   } else message("Not all object are MONOTONE missing. Change redu to TRUE")}
 out<-objdata
