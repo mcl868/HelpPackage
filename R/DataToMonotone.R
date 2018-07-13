@@ -32,6 +32,7 @@ DataToMonotone<-function(response, covariates, missing, data, redu, ...){
   result$data<-data2
   result$covariatesObj<-covariates
   result$missingObj<-missing
+  result$responseObj<-response
   result$DataSetformat<-DataSetformat
 
   attr(result, "class")<-"DataToMonotoneMissing"
