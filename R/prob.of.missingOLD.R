@@ -1,4 +1,4 @@
-prob.of.missing<-function(object, regression, augspace = TRUE, completecase = FALSE, regList, ...){
+prob.of.missingOLD<-function(object, regression, augspace = TRUE, completecase = FALSE, regList, ...){
   if(inherits(object,"DataToMonotoneMissing")){
     
     objdata<-object$data
