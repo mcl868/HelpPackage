@@ -1,7 +1,7 @@
-DataToMonotone<-function (response, covariates, missing, data, redu, ...){
+DataToMonotone<-function(response, covariates, missing, data, redu, ...){
   result<-list()
   data1<-data[, c(covariates, response)]
-  if(length(covariates)>1){
+  if(length(response)>1){
     DataSetformat<-"Longitudinal"
   } else {
     DataSetformat<-"OneResponse"
