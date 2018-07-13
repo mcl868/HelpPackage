@@ -13,8 +13,8 @@ DataToMonotone<-function (response, covariates, missing, data, redu, ...){
   data2$C<-rowSums(data2[, c(paste0(missing, "_R"))])
   data2$C[data2$C==ma]<-Inf
   data2$MONOTONE <- NA
-  for(j in 1:nrow(data2)) {
-    data2$MONOTONE[j] <- all(sapply(1:(ma - 1), function(i) eval(parse(text = paste0("data2$", 
+  for(j in 1:nrow(data2)){
+    data2$MONOTONE[j]<-all(sapply(1:(ma - 1), function(i) eval(parse(text = paste0("data2$", 
                                                                                      missing[i], "_R[j]>=", "data2$", missing[i + 1], 
                                                                                      "_R[j]")))))
   }
@@ -24,7 +24,7 @@ DataToMonotone<-function (response, covariates, missing, data, redu, ...){
     data2<-data2[data2$MONOTONE == redu, ]
     result$reduObj<-redu
   }
-  result$data <- data2
+  result$data<-data2
   result$covariatesObj<-covariates
   result$missingObj<-missing
 
