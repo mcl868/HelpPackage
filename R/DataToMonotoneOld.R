@@ -1,4 +1,4 @@
-DataToMonotone<-function(data, orderSeq, redu, ...){
+DataToMonotoneOld<-function(data, orderSeq, redu, ...){
   result<-list()
 
   data1<-data[,orderSeq]
