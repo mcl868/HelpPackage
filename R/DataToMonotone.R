@@ -1,6 +1,11 @@
 DataToMonotone<-function (response, covariates, missing, data, redu, ...){
   result<-list()
   data1<-data[, c(covariates, response)]
+  if(length(covariates)>1){
+    DataSetformat<-"Longitudinal"
+  } else {
+    DataSetformat<-"OneResponse"
+  }
   ma<-length(missing)
   for(i in 1:ma){
     for(j in 1:nrow(data1)){
@@ -27,6 +32,7 @@ DataToMonotone<-function (response, covariates, missing, data, redu, ...){
   result$data<-data2
   result$covariatesObj<-covariates
   result$missingObj<-missing
+  result$DataSetformat<-DataSetformat
 
   attr(result, "class")<-"DataToMonotoneMissing"
   out<-structure(result, class = "DataToMonotoneMissing")
