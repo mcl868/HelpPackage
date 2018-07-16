@@ -36,7 +36,6 @@ print("missing")
           Model<-paste0(c(A$covariatesObj,A$responseObj)[!c(A$covariatesObj,A$responseObj) %in% A$missingObj],collapse=" + ")
         }}
 
-print(glm(as.formula(paste0("1*(objdata$C==Inf) ~ ",Model,collapse="")), data=objdata,family = binomial()))
       objdata$Pi<-predict(glm(as.formula(paste0("1*(objdata$C==Inf) ~ ",Model,collapse="")), data=objdata,family = binomial()),type="response")
       objdata$PiINV<-1/objdata$Pi
       if(augspace){
