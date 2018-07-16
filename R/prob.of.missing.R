@@ -41,7 +41,6 @@ prob.of.missing<-function(object, regression, augspace = TRUE, completecase = FA
       }
       eval(parse(text=paste0("objdata$varpiInf<-",paste0("(1-objdata$lambda",c(1:(length(orderSeqObj)-1)),")",collapse = "*"))))
       
-      print("missing")
       if(augspace){
         for(jj in 1:(length(orderSeqObj)-1)){
           eval(parse(text=paste0("objdata$K",jj,"<-",paste0("(1-objdata$lambda",c(1:jj),")",collapse = "*"))))
