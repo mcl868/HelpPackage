@@ -28,7 +28,12 @@ print("missing")
         order<-as.numeric(unlist(strsplit(regression,split = "[.]"))[!unlist(strsplit(regression,split = "[.]")) %in% "higherorder"])
         ListVar<-c(A$covariatesObj,A$responseObj)[!c(A$covariatesObj,A$responseObj) %in% A$missingObj]
         Model<-paste0(paste0(unlist(lapply(1:order, function(i)paste0("I(",ListVar,"^",i,")"))),collapse=" + "))
-      }} else { Model<-regList[[1]]}
+      }} else { 
+        if(length(regList)<2){
+          Model<-regList[[1]]
+        } else {
+          message("regList is too long.")
+        }}
 
       objdata$Pi<-predict(glm(as.formula(paste0("1*(objdata$C==Inf) ~ ",Model,collapse="")), data=objdata,family = binomial()),type="response")
       objdata$PiINV<-1/objdata$Pi
