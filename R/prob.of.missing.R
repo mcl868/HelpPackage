@@ -32,7 +32,8 @@ print("missing")
         if(length(regList)<2){
           Model<-regList[[1]]
         } else {
-          message("regList is too long.")
+          message("regList is too long. Regression is simple.")
+          Model<-paste0(c(A$covariatesObj,A$responseObj)[!c(A$covariatesObj,A$responseObj) %in% A$missingObj],collapse=" + ")
         }}
 
       objdata$Pi<-predict(glm(as.formula(paste0("1*(objdata$C==Inf) ~ ",Model,collapse="")), data=objdata,family = binomial()),type="response")
