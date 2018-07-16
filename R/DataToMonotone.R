@@ -21,8 +21,9 @@ DataToMonotone<-function(response, covariates, missing, data, redu, ...){
   } else {
     DataSetformat<-"OneResponse"
     data2<-data1[rowSums(is.na(data1[,!(c(covariates, response) %in% missing)]))==0,]
-    data2$C<-Inf
-    data2$C[rowSums(is.na(data2[,c(covariates, response)]))==length(missing)]<-1
+    data2$C<-NA
+    data2$C[rowSums(is.na(data2[,c(covariates, response) ]))==0]<-Inf
+    data2$C[rowSums(is.na(data2[,missing]))==length(missing)]<-1
     data2$MONOTONE<-TRUE
   }
 
