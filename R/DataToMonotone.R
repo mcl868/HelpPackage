@@ -1,7 +1,7 @@
-DataToMonotone<-function(response, covariates, missing, data, redu, ...){
+DataToMonotone<-function(response, covariates, missing, data, redu, pattern, ...){
   result<-list()
   data1<-data[, c(covariates, response)]
-  if(length(response)>1){
+  if(pattern=="multiple"){
     DataSetformat<-"Longitudinal"
     ma<-length(missing)
     for(i in 1:ma){
