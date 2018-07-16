@@ -13,7 +13,7 @@ prob.of.missing<-function(object, regression, augspace = TRUE, completecase = FA
       }
     }
     
-    if(all(objdata$MONOTONE)){
+    if(all(objdata$MONOTONE) & !is.null(objdata$MONOTONE)){
 print("missing")
     }
     if(object$DataSetformat=="OneResponse"){
