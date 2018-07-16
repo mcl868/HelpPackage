@@ -25,6 +25,7 @@ DataToMonotone<-function(response, covariates, missing, data, redu, ...){
     data2$C[rowSums(is.na(data2[,c(covariates, response) ]))==0]<-Inf
     data2$C[rowSums(is.na(data2[,missing]))==length(missing)]<-1
     data2$MONOTONE<-TRUE
+    data2<-data2[!is.na(data2$C),]
   }
 
   result$reduObj<-"Not defined"
