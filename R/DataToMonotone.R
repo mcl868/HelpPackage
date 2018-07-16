@@ -18,7 +18,8 @@ DataToMonotone<-function(response, covariates, missing, data, redu, pattern, ...
                                                                                      missing[i], "_R[j]>=", "data2$", missing[i + 1], 
                                                                                      "_R[j]")))))
     }
-  } else {
+  }
+  if(pattern=="single"){
     DataSetformat<-"OneResponse"
     data2<-data1[rowSums(is.na(data1[,!(c(covariates, response) %in% missing)]))==0,]
     data2$C<-NA
@@ -27,14 +28,15 @@ DataToMonotone<-function(response, covariates, missing, data, redu, pattern, ...
     data2$MONOTONE<-TRUE
     data2<-data2[!is.na(data2$C),]
   }
-
+  
   result$reduObj<-"Not defined"
   if(!missing(redu)){
     data2<-data2[data2$MONOTONE == redu, ]
-    if(length(response)>1){
+    if(pattern=="multiple"){
       result$reduObj<-redu
-    } else {
-      data2$MONOTONE<-NULL
+    } 
+    if(pattern=="single"){
+        data2$MONOTONE<-NULL
     }
     
   }
@@ -43,9 +45,9 @@ DataToMonotone<-function(response, covariates, missing, data, redu, pattern, ...
   result$missingObj<-missing
   result$responseObj<-response
   result$DataSetformat<-DataSetformat
-
+  
   attr(result, "class")<-"DataToMonotoneMissing"
   out<-structure(result, class = "DataToMonotoneMissing")
-
+  
   return(out)
 }
