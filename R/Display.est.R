@@ -4,8 +4,9 @@ Display.est<-function(est, varest, digits = 4, ...){
   } else {
   varestM<-varest
   }
-  Disp<-cbind(est, sqrt(varestM), est-1.96*sqrt(varestM), est+1.96*sqrt(varestM))
-  colnames(Disp)<-c("Est","Std.err","Lower","Upper")
+  pest<-2*(1-pnorm(abs(est/sqrt(varestM))))
+  Disp<-cbind(est, sqrt(varestM), est-1.96*sqrt(varestM), est+1.96*sqrt(varestM),pest)
+  colnames(Disp)<-c("Est","Std.err","Lower","Upper","pValue")
   rownames(Disp)<-rownames(est)
   return(round(Disp,digits))
 }
