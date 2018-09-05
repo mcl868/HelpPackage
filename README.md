@@ -7,10 +7,10 @@ install_github('mcl868/HelpPackage')
 ```
 
 
-## This package contain following functions
--- 1
-- 2
-- 3
+## This package contains following functions
+- listMean(x)
+- listVar(x)
+- listSums(x)
 -
 
 ### listMean and listVar
