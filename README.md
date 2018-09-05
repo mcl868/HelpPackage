@@ -11,7 +11,7 @@ install_github('mcl868/HelpPackage')
 - [listMean(x)](https://github.com/mcl868/HelpPackage/blob/master/README.md#listmean-and-listvar)
 - [listVar(x)](https://github.com/mcl868/HelpPackage/blob/master/README.md#listmean-and-listvar)
 - [listSums(x)](https://github.com/mcl868/HelpPackage/blob/master/README.md#listsums)
-- []
+- [DataToMonotone](https://github.com/mcl868/HelpPackage/blob/master/README.md#datatomonotone)
 - [prob.of.missing](https://github.com/mcl868/HelpPackage/blob/master/README.md#probofmissing)
 
 ### listMean and listVar
@@ -49,7 +49,12 @@ a     1
 b  5050
 ```
 
+### DataToMonotone
+```markdown
+1
+```
+
 ### prob.of.missing
 ```markdown
-  
+1
 ```
