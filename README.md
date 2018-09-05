@@ -11,7 +11,8 @@ install_github('mcl868/HelpPackage')
 - [listMean(x)](https://github.com/mcl868/HelpPackage/blob/master/README.md#listmean-and-listvar)
 - [listVar(x)](https://github.com/mcl868/HelpPackage/blob/master/README.md#listmean-and-listvar)
 - [listSums(x)](https://github.com/mcl868/HelpPackage/blob/master/README.md#listsums)
--
+- []
+- [prob.of.missing]
 
 ### listMean and listVar
 Evaulate the mean and variance across a list 
@@ -46,4 +47,9 @@ listSums(ListOfSum)
   value
 a     1
 b  5050
+```
+
+### prob.of.missing
+```markdown
+  
 ```
