@@ -8,7 +8,7 @@ install_github('mcl868/HelpPackage')
 
 
 ## This package contains following functions
-- listMean(x)
+- [listMean(x)](https://github.com/mcl868/HelpPackage/blob/master/README.md#listmean-and-listvar)
 - listVar(x)
 - listSums(x)
 -
