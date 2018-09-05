@@ -11,7 +11,7 @@ install_github('mcl868/HelpPackage')
 ### 1
 ### 2
 ### 3
-
+-
 
 ### listMean and listVar
 Evaulate the mean and variance across a list 
