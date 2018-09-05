@@ -7,6 +7,9 @@ install_github('mcl868/HelpPackage')
 ```
 
 
+
+### listMean and listVar
+Evaulate the average across a list 
 ```markdown
 N<-1000
 set.seed(3)
@@ -19,4 +22,9 @@ listMean(ListOfNorm)
      value
 a 1.996752
 b 1.988997
+
+listVar(ListOfNorm)
+      value
+a 1.0101092
+b 0.9807797
 ```
