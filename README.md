@@ -10,6 +10,7 @@ devtools::install_github('mcl868/HelpPackage')
 - [listMean](https://github.com/mcl868/HelpPackage/blob/master/README.md#listmean-and-listvar)
 - [listVar](https://github.com/mcl868/HelpPackage/blob/master/README.md#listmean-and-listvar)
 - [listSums](https://github.com/mcl868/HelpPackage/blob/master/README.md#listsums)
+- [indicator](https://github.com/mcl868/HelpPackage/blob/master/README.md#indicator)
 - [missing.pattern](https://github.com/mcl868/HelpPackage/blob/master/README.md#missingpattern)
 - [prob.of.missing](https://github.com/mcl868/HelpPackage/blob/master/README.md#probofmissing)
 
@@ -47,6 +48,13 @@ listSums(ListOfSum)
 a     1
 b  5050
 ```
+### indicator
+```markdown
+indicator(condition, x)
+```
+
+
+indicator
 
 ### missing.pattern
 ```markdown
