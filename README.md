@@ -10,7 +10,7 @@ devtools::install_github('mcl868/HelpPackage')
 - [listMean](https://github.com/mcl868/HelpPackage/blob/master/README.md#listmean-and-listvar)
 - [listVar](https://github.com/mcl868/HelpPackage/blob/master/README.md#listmean-and-listvar)
 - [listSums](https://github.com/mcl868/HelpPackage/blob/master/README.md#listsums)
-- [missing.pattern](https://github.com/mcl868/HelpPackage/blob/master/README.md#datatomonotone)
+- [missing.pattern](https://github.com/mcl868/HelpPackage/blob/master/README.md#missingpattern)
 - [prob.of.missing](https://github.com/mcl868/HelpPackage/blob/master/README.md#probofmissing)
 
 ### listMean and listVar
