@@ -5,7 +5,7 @@ missing.pattern<-function(response, covariates, data, pattern, ...){
   lengthVar<-length(variables)
   
   data1<-data[, variables]
-  data1$C<-rowSums(1*is.na(data1))
+  data1$C<-rowSums(1*!is.na(data1))
   data1$C[data1$C==0]<-Inf
 
   if(missing(pattern)){
