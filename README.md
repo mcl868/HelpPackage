@@ -7,10 +7,10 @@ devtools::install_github('mcl868/HelpPackage')
 
 
 ## This package contains following functions
-- [listMean(x)](https://github.com/mcl868/HelpPackage/blob/master/README.md#listmean-and-listvar)
-- [listVar(x)](https://github.com/mcl868/HelpPackage/blob/master/README.md#listmean-and-listvar)
-- [listSums(x)](https://github.com/mcl868/HelpPackage/blob/master/README.md#listsums)
-- [DataToMonotone](https://github.com/mcl868/HelpPackage/blob/master/README.md#datatomonotone)
+- [listMean](https://github.com/mcl868/HelpPackage/blob/master/README.md#listmean-and-listvar)
+- [listVar](https://github.com/mcl868/HelpPackage/blob/master/README.md#listmean-and-listvar)
+- [listSums](https://github.com/mcl868/HelpPackage/blob/master/README.md#listsums)
+- [missing.pattern](https://github.com/mcl868/HelpPackage/blob/master/README.md#datatomonotone)
 - [prob.of.missing](https://github.com/mcl868/HelpPackage/blob/master/README.md#probofmissing)
 
 ### listMean and listVar
@@ -48,9 +48,12 @@ a     1
 b  5050
 ```
 
-### DataToMonotone
+### missing.pattern
 ```markdown
-1
+missing.pattern(response, 
+                covariates, 
+                data, 
+                pattern, ...)
 ```
 
 ### prob.of.missing
