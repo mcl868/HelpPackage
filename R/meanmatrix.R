@@ -1,4 +1,4 @@
-meanMatrix<-function(x){
+mean.matrix<-function(x){
   if(is.matrix(x)){
     SampleSize<-nrow(x)
     out<-(t(x)%*%x)/SampleSize
