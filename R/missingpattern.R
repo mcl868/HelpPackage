@@ -6,7 +6,7 @@ missing.pattern<-function(response, covariates, data, pattern, ...){
   
   data1<-data[, variables]
   data1$C<-rowSums(1*!is.na(data1))
-  data1$C[data1$C==0]<-Inf
+  data1$C[data1$C==length(variables)]<-Inf
 
   if(missing(pattern)){
     if(length(unique(data1$C))>3){
