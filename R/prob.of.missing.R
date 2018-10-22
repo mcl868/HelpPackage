@@ -71,8 +71,6 @@ prob.of.missing<-function(object, regression, list.out = TRUE, completecase = FA
       out$varpimodel<-varpimodel
       out$CoefList<-CoefList
     }
-    out$count<-table(objdata$C)
-    out$percent<-table(objdata$C)/nrow(objdata)
   } else {
   	if(completecase){
       objdata<-objdata[objdata$C==Inf,]
