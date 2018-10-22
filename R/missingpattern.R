@@ -8,9 +8,11 @@ missing.pattern<-function(response, covariates, data, pattern, ...){
   data1$C<-rowSums(1*!is.na(data1))
   data1$C[data1$C==lengthVar]<-Inf
 
-  if(tolower(pattern) %in% c("twolevel", "monotone")){
-    if(tolower(pattern) == "twolevel") pattern = "TwoLevel"
-    if(tolower(pattern) == "monotone") pattern = "Monotone"
+  if(!missing(pattern)){
+    if(tolower(pattern) %in% c("twolevel", "monotone")){
+      if(tolower(pattern) == "twolevel") pattern = "TwoLevel"
+      if(tolower(pattern) == "monotone") pattern = "Monotone"
+    }
   }
 
   if(missing(pattern)){
