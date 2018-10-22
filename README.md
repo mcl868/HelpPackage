@@ -67,5 +67,10 @@ missing.pattern(response,
 
 ### prob.of.missing
 ```markdown
-1
+prob.of.missing(object,
+                regression,
+                list.out = TRUE,
+                completecase = FALSE,
+                regList,
+                order=NULL, ...)
 ```
