@@ -1,4 +1,4 @@
-prob.of.missing<-function(object, regression, list.out = TRUE ,completecase = FALSE, regList, order=NULL, ...){
+prob.of.missing<-function(object, regression, list.out = TRUE, completecase = FALSE, regList, order=NULL, ...){
 
   if(inherits(object,"DataToPattern")){
   
