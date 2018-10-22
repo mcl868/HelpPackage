@@ -6,7 +6,7 @@ missing.pattern<-function(response, covariates, data, pattern, ...){
   
   data1<-data[, variables]
   data1$C<-rowSums(1*!is.na(data1))
-  data1$C[data1$C==length(variables)]<-Inf
+  data1$C[data1$C==lengthVar]<-Inf
 
   if(missing(pattern)){
     if(length(unique(data1$C))>3){
@@ -18,7 +18,7 @@ missing.pattern<-function(response, covariates, data, pattern, ...){
   if(pattern=="Monotone"){
     data2<-data1[rowSums((1*is.na(data1[1:(lengthVar-1)]))<=(1*is.na(data1[2:lengthVar])))==(lengthVar-1),]}
   if(pattern=="TwoLevel"){
-    data2<-data1[data1$C %in% c(1,Inf),]}
+    data2<-data1[data1$C %in% c((lengthVar-1),Inf),]}
   
   result$data<-data2
   result$covariatesObj<-covariates
