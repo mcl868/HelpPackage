@@ -50,7 +50,7 @@ a     1
 b  5050
 ```
 ### mean.matrix
-a href="http://www.codecogs.com/eqnedit.php?latex=\bar{X}=((X_{1,1},X_{2,1},\ldots,X_{n,1})^T,(X_{1,2},X_{2,2},\ldots,X_{n,2})^T,\ldots(X_{1,k},X_{2,k},\ldots,X_{n,k})^T)" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\bar{X}=((X_{1,1},X_{2,1},\ldots,X_{n,1})^T,(X_{1,2},X_{2,2},\ldots,X_{n,2})^T,\ldots(X_{1,k},X_{2,k},\ldots,X_{n,k})^T)" title="\bar{X}=((X_{1,1},X_{2,1},\ldots,X_{n,1})^T,(X_{1,2},X_{2,2},\ldots,X_{n,2})^T,\ldots(X_{1,k},X_{2,k},\ldots,X_{n,k})^T)" /></a>
+<a href="http://www.codecogs.com/eqnedit.php?latex=\bar{X}=((X_{1,1},X_{2,1},\ldots,X_{n,1})^T,(X_{1,2},X_{2,2},\ldots,X_{n,2})^T,\ldots(X_{1,k},X_{2,k},\ldots,X_{n,k})^T)" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\bar{X}=((X_{1,1},X_{2,1},\ldots,X_{n,1})^T,(X_{1,2},X_{2,2},\ldots,X_{n,2})^T,\ldots(X_{1,k},X_{2,k},\ldots,X_{n,k})^T)" title="\bar{X}=((X_{1,1},X_{2,1},\ldots,X_{n,1})^T,(X_{1,2},X_{2,2},\ldots,X_{n,2})^T,\ldots(X_{1,k},X_{2,k},\ldots,X_{n,k})^T)" /></a>
 where k is the number of variable
 ```markdown
 X<-matrix(c(1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2),10)
