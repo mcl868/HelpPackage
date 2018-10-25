@@ -1,6 +1,6 @@
 mean.matrix<-function(x, na.rm=FALSE, ...){
   if(is.matrix(x)){
-    if(is.true(na.rm)){
+    if(na.rm){
       object<-na.omit(x)
     } else {
       object<-x
