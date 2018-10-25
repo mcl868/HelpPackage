@@ -63,7 +63,7 @@ mean.matrix(Xbar)
 [1,] 28.6 25.1
 [2,] 25.1 28.9
 
-Xbar[13]<-NA
+Xbar[4,2]<-NA
 mean.matrix(Xbar)
      [,1] [,2]
 [1,] 28.6   NA
