@@ -54,7 +54,7 @@ b  5050
 
 where k is the number of variable and n is the samplesize
 
-<a href="http://www.codecogs.com/eqnedit.php?latex=E(\bar{X}^T\bar{X})" target="_blank"><img src="http://latex.codecogs.com/gif.latex?E(\bar{X}^T\bar{X})" title="E(\bar{X}^T\bar{X})" /></a>
+<a href="http://www.codecogs.com/eqnedit.php?latex=E\left(\bar{X}^T\bar{X}\right)" target="_blank"><img src="http://latex.codecogs.com/gif.latex?E\left(\bar{X}^T\bar{X}\right)" title="E\left(\bar{X}^T\bar{X}\right)" /></a>
 ```markdown
 Xbar<-matrix(c(1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2),10)
 
