@@ -34,8 +34,10 @@ prob.of.missing<-function(object, regression, list.out = TRUE, completecase = FA
     
   if(patternObj=="Monotone"){
   	if(!missing(regList)){
-  	  for(iii_ in 1:length(regList)){
+  	  levels<-as.numeric(rownames(table(objdata$C))[!rownames(table(objdata$C)) %in% Inf])
+  	  for(iii_ in levels){
   	  lambdamodel<-paste0("1*(C==",iii_,") ~ ",regList[[iii_]])
+print(lambdamodel)
   	  lambda<-predict(glm(lambdamodel, data= objdata[objdata$C>=iii_,],family=binomial()),type="response", newdata=objdata)
   	  eval(parse(text=paste0("objdata$lambda",iii_,"<-lambda")))
   	  kvales<-eval(parse(text=paste0(paste0("(1-objdata$lambda",1:iii_,")"),collapse="*")))
