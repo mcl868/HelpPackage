@@ -35,16 +35,24 @@ prob.of.missing<-function(object, regression, list.out = TRUE, completecase = FA
   if(patternObj=="Monotone"){
   	if(!missing(regList)){
   	  levels<-as.numeric(rownames(table(objdata$C))[!rownames(table(objdata$C)) %in% Inf])
+          qq<-c(1:length(covariatesObj))
+          eval(parse(text=paste0("objdata$lambda",qq[!(qq %in% levels)],"<-0")))
+          CoefList<-vector("list",length(covariatesObj))
   	  for(iii_ in levels){
   	  lambdamodel<-paste0("1*(C==",iii_,") ~ ",regList[[iii_]])
-print(lambdamodel)
-  	  lambda<-predict(glm(lambdamodel, data= objdata[objdata$C>=iii_,],family=binomial()),type="response", newdata=objdata)
+          CoefList[[iii_]]<-coef(glm(lambdamodel, data= objdata[objdata$C>=iii_,],family=binomial()))
+ 	  lambda<-predict(glm(lambdamodel, data= objdata[objdata$C>=iii_,],family=binomial()),type="response", newdata=objdata)
   	  eval(parse(text=paste0("objdata$lambda",iii_,"<-lambda")))
   	  kvales<-eval(parse(text=paste0(paste0("(1-objdata$lambda",1:iii_,")"),collapse="*")))
-  	  eval(parse(text=paste0("objdata$K",iii_,"<-kvales")))
   	  }
+          objdatalambda<-objdata[,paste0("lambda",qq)]
+          objdatalambda[is.na(objdata[,covariatesObj])]<-NA
+          eval(parse(text=paste0("objdata$lambda",qq,"<-NULL")))
+          objdata<-cbind(objdata,objdatalambda)
+          objdata$K0<-1
+          for(iiii_ in qq){eval(parse(text=paste0("objdata$K",iiii_,"<-objdata$K",iiii_-1,"*(1-objdata$lambda",iiii_,")")))}
+          objdata$K0<-NULL
   	  eval(parse(text=paste0("objdata$varpi<-objdata$K",length(regList))))
-      objdata$varpi[objdata$C<Inf]<-NA
   	} else {
   	  if(missing(regression)){
       message("regression is simple")
