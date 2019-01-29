@@ -86,16 +86,16 @@ prob.of.missing<-function(object, regression, list.out = TRUE, completecase = FA
       out$regList<-regList
       out$CoefList<-CoefList
     }
+    attr(out, "class")<-"ProbToData"
+    output<-structure(out, class = "ProbToData")
   } else {
   	if(completecase){
       objdata<-objdata[objdata$C==Inf,]
       message("Complete Case")
     }
-    out<-objdata
+    output<-objdata
   }
   
-  attr(out, "class")<-"ProbToData"
-  output<-structure(out, class = "ProbToData")
 
   return(output)
   }
