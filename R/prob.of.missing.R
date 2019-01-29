@@ -109,7 +109,9 @@ prob.of.missing<-function(object, regression, list.out = TRUE, completecase = FA
     out<-objdata
   }
   
-  
-  return(out)
+  attr(out, "class")<-"ProbToData"
+  output<-structure(out, class = "ProbToData")
+
+  return(output)
   }
 }
