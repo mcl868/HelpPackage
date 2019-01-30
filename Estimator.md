@@ -1,6 +1,11 @@
 Estimator
 
+```markdown
 
+g.aipw.dicho(mmodels, pmodels, data, ...)
+
+
+```
 
 
 ### Data
@@ -27,7 +32,7 @@ for(iiii in 1:loop){
 rm("iiii")
 ```
 
-### Data
+### Model
 ```markdown
 pi1 <- X0 ~ L0
 pi2 <- X1 ~ L0 + X0 + L1 + L1*X0
@@ -36,4 +41,8 @@ pi3 <- X2 ~ L0 + X0 + L1 + X1 + L2 + L1*X1
 model1 <- Y ~ L0 + X0 + L1 + X1 + L2 + X2 + L2*X2
 model2 <- model1 ~ X1 + L1 + X0 + L0
 model3 <- model2 ~ X0 + L0 + X0*L0
+
+estimation<-list()
+for(iiii in 1:loop){
+  estimation[[iiii]]<-g.aipw.dicho(mmodels=c(model1,model2,model3), pmodels=c(pi1,pi2,pi3), data=DataSetList[[iiii]])}
 ```
