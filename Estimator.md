@@ -44,5 +44,7 @@ model3 <- model2 ~ X0 + L0 + X0*L0
 
 estimation<-list()
 for(iiii in 1:loop){
-  estimation[[iiii]]<-g.aipw.dicho(mmodels=c(model1,model2,model3), pmodels=c(pi1,pi2,pi3), data=DataSetList[[iiii]])}
+  estimation[[iiii]]<-g.aipw.dicho(mmodels=c(model1,model2,model3), 
+                                   pmodels=c(pi1,pi2,pi3), 
+                                   data=DataSetList[[iiii]])}
 ```
