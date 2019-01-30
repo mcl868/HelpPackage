@@ -1,5 +1,6 @@
-Estimator
+#Estimator
 
+##Binary exposure
 ```markdown
 g.aipw.dicho(mmodels,
              pmodels,
