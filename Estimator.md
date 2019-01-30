@@ -2,7 +2,10 @@ Estimator
 
 ```markdown
 
-g.aipw.dicho(mmodels, pmodels, data, ...)
+g.aipw.dicho(mmodels,
+             pmodels,
+             data,
+             ...)
 
 
 ```
