@@ -78,23 +78,6 @@ mean.matrix(Xbar,na.rm=TRUE)
 ```markdown
 indicator(condition, x)
 ```
-### missing.pattern
-```markdown
-missing.pattern(response, 
-                covariates, 
-                data, 
-                pattern, ...)
-```
-
-### prob.of.missing
-```markdown
-prob.of.missing(object,
-                regression,
-                list.out = TRUE,
-                completecase = FALSE,
-                regList,
-                order=NULL, ...)
-```
 
 [AIPW](https://github.com/mcl868/HelpPackage/blob/master/Estimator.md)
 
