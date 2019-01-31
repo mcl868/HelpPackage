@@ -109,8 +109,6 @@ regList[[4]]<-"L0 + X0 + L1 + X1"
 regList[[5]]<-"L0 + X0 + L1 + X1 + L2"
 regList[[6]]<-"L0 + X0 + L1 + X1 + L2 + X2 + X1*X2"
 
-
-
 DataSetCount<-list()
 CountList<-Coef1List<-Coef2List<-Coef3List<-Coef4List<-Coef5List<-Coef6List<-list()
 for(iiii in 1:loop){
