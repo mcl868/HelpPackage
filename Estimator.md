@@ -1,7 +1,7 @@
 # Estimator
 
 ## DAG
-![capture](https://user-images.githubusercontent.com/20704019/52067565-209ee480-257b-11e9-9461-d8dd80c3863f.PNG=250x250)
+![capture](https://user-images.githubusercontent.com/20704019/52067565-209ee480-257b-11e9-9461-d8dd80c3863f.PNG)
 
 
 
