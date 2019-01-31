@@ -152,8 +152,21 @@ round(listMean(Coef5List),1)
 round(listMean(Coef6List),1)
 (Intercept)          L0          X0          L1          X1          L2          X2       X1:X2 
        -2.0         0.4         0.2         0.7        -0.5        -0.3         1.2        -1.4 
+
+
 ```
 
+### Missing estimation
+```markdown
+estimationMis<-list()
+for(iiii in 1:loop){
+  estimationMis[[iiii]]<-g.aipw.dicho.missing(mmodels=c(model1,model2,model3),
+                                              pmodels=c(pi1,pi2,pi3),
+                                              data=DataSetList[[iiii]],
+                                              covariates=c("L0","X0","L1","X1","L2","X2"),
+                                              pattern = "Monotone",
+                                              regList=regList)}
+```
 
 
 
