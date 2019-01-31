@@ -15,6 +15,8 @@ devtools::install_github('mcl868/HelpPackage')
 - [missing.pattern](https://github.com/mcl868/HelpPackage/blob/master/README.md#missingpattern)
 - [prob.of.missing](https://github.com/mcl868/HelpPackage/blob/master/README.md#probofmissing)
 
+[AIPW](https://github.com/mcl868/HelpPackage/blob/master/Estimator.md)
+
 ### listMean and listVar
 Evaulate the mean and variance across a list 
 ```markdown
@@ -79,5 +81,4 @@ mean.matrix(Xbar,na.rm=TRUE)
 indicator(condition, x)
 ```
 
-[AIPW](https://github.com/mcl868/HelpPackage/blob/master/Estimator.md)
 
