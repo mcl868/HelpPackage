@@ -97,6 +97,10 @@ for(iiii in 1:loop){
 
   DataSetListNA[[iiii]]<-rbind(updata1,updata2,updata3,updata4,updata5,updata6,updata7)[sample(1:NN,NN),]}
 
+```
+
+### Missing regression
+```markdown
 regList<-list()
 regList[[1]]<-"L0"
 regList[[2]]<-"L0 + X0"
@@ -115,7 +119,7 @@ for(iiii in 1:loop){
                            data = DataSetListNA[[iiii]],
                            pattern = "Monotone")
 
-  DataSetobj<-prob.of.missing(misdata, regList = regList)#,regression="simple")#list.out=FALSE)
+  DataSetobj<-prob.of.missing(misdata, regList = regList)
 
   DataSetCount[[iiii]]<-misdata$count
   Coef1List[[iiii]]<-DataSetobj$CoefList[[1]]
