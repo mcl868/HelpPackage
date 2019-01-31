@@ -48,3 +48,21 @@ for(iiii in 1:loop){
                                    pmodels=c(pi1,pi2,pi3), 
                                    data=DataSetList[[iiii]])}
 ```
+
+### missing.pattern
+```markdown
+missing.pattern(response, 
+                covariates, 
+                data, 
+                pattern, ...)
+```
+
+### prob.of.missing
+```markdown
+prob.of.missing(object,
+                regression,
+                list.out = TRUE,
+                completecase = FALSE,
+                regList,
+                order=NULL, ...)
+```
