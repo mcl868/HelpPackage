@@ -7,7 +7,7 @@ print.DataToPattern<-function(x, digits=3, ...){
     cat("Missing pattern is",tolower(object$pattern),"and the number of observations:\n")
     print(object$count)
     cat("Percents of observations:\n")
-    object$percent
+    print(object$percent)
     
     
     
