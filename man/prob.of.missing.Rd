@@ -8,7 +8,7 @@ prob.of.missing
   A concise (1-5 lines) description of what the function does. 
 }
 \usage{
-prob.of.missing(object, regression, augspace = FALSE, regList, ...) 
+prob.of.missing(object, regression, list.out = TRUE, completecase = FALSE, regList, order = NULL, ...) 
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -18,10 +18,16 @@ prob.of.missing(object, regression, augspace = FALSE, regList, ...)
   \item{regression}{
 %%     ~~Describe \code{x} here~~
 }
-  \item{augspace}{
+  \item{list.out}{
+%%     ~~Describe \code{x} here~~
+}
+  \item{completecase}{
 %%     ~~Describe \code{x} here~~
 }
   \item{regList}{
+%%     ~~Describe \code{x} here~~
+}
+  \item{order}{
 %%     ~~Describe \code{x} here~~
 }
 }
@@ -52,13 +58,20 @@ Thomas Maltesen
 }
 \examples{
 
+regList<-list()
+regList[[1]]<-"L0"
+regList[[2]]<-"L0 + X0"
+regList[[3]]<-"L0 + X0 + L1"
+regList[[4]]<-"L0 + X0 + L1 + X1"
+regList[[5]]<-"L0 + X0 + L1 + X1 + L2"
+regList[[6]]<-"L0 + X0 + L1 + X1 + L2 + X2 + X1*X2"
 
-reg[[1]]<-"R ~ A"
-reg[[2]]<-"R ~ A + B"
-reg[[3]]<-"R ~ A + B + C"
-reg[[4]]<-"R ~ A + B + C + D"
-reg
 
+misdata<-missing.pattern(response = "Y",
+                         covariates = c("L0","X0","L1","X1","L2","X2"),
+                         data = DataSetListNA[[iiii]],
+                         pattern = "Monotone")
+DataSetobj<-prob.of.missing(misdata, regList = regList)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

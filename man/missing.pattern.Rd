@@ -1,24 +1,28 @@
-\name{DataToMonotone}
-\alias{DataToMonotone}
+\name{missing.pattern}
+\alias{missing.pattern}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-DataToMonotone
+missing.pattern
 }
 \description{
   A concise (1-5 lines) description of what the function does. 
 }
 \usage{
-DataToMonotone(data, orderSeq, redu, ...)
+missing.pattern(response, covariates, data, pattern, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
+  \item{response}{
+%%     ~~Describe \code{x} here~~
+}
+  \item{covariates}{
+%%     ~~Describe \code{x} here~~
+}
   \item{data}{
 %%     ~~Describe \code{x} here~~
 }
-  \item{orderSeq}{
+  \item{pattern}{
 %%     ~~Describe \code{x} here~~
-}
-  \item{redu}{
 }
 }
 \details{
