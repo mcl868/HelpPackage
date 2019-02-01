@@ -31,7 +31,7 @@ missing.pattern<-function(response, covariates, data, pattern, ...){
   result$covariatesObj<-covariates
   result$pattern<-pattern
   result$responseObj<-response
-  result$count<-table(data2$C)
+  result$count<-addmargins(table(data2$C))
   result$percent<-table(data2$C)/nrow(data2)
 
   attr(result, "class")<-"DataToPattern"
