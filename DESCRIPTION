@@ -8,5 +8,4 @@ Description: HelpPackage.
 URL: https://github.com/mcl868/HelpPackage.git
 License: GPL (>= 3)
 Encoding: UTF-8
-Depends: gtools
 LazyData: true
