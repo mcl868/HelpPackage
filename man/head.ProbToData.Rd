@@ -1,28 +1,23 @@
-\name{RemoveMissingObervation}
-\alias{RemoveMissingObervation}
+\name{head.ProbToData}
+\alias{head.ProbToData}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-RemoveMissingObervation
+Haed
 }
 \description{
-  A concise (1-5 lines) description of what the function does. 
+Head call for an object from \code{prob.of.missing}.
 }
 \usage{
-RemoveMissingObervation(data, output, var.list, global=TRUE, ...)
+## S3 method for class 'prob.of.missing'
+print(x, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{data}{
-%%     ~~Describe \code{x} here~~
+  \item{x}{
+An \code{prob.of.missing} object.
 }
-  \item{output}{
-%%     ~~Describe \code{x} here~~
-}
-  \item{var.list}{
-%%
-}
-  \item{global}{
-%%
+  \item{\dots}{
+For further arguments for the \code{print}-function.
 }
 }
 \details{
@@ -36,7 +31,7 @@ RemoveMissingObervation(data, output, var.list, global=TRUE, ...)
 %% ...
 }
 \references{
-put references to the literature/web site here
+%% ~put references to the literature/web site here ~
 }
 \author{
 Thomas Maltesen
@@ -51,8 +46,7 @@ Thomas Maltesen
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-dd
-
+Look at \code{\link{prob.of.missing}}.
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
