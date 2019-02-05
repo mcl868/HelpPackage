@@ -160,12 +160,12 @@ round(listMean(Coef6List),1)
 ```markdown
 estimationMis<-list()
 for(iiii in 1:loop){
-  estimationMis[[iiii]]<-g.aipw.dicho.missing(mmodels=c(model1,model2,model3),
-                                              pmodels=c(pi1,pi2,pi3),
-                                              data=DataSetList[[iiii]],
-                                              covariates=c("L0","X0","L1","X1","L2","X2"),
-                                              pattern = "Monotone",
-                                              regList=regList)}
+  estimationMis[[iiii]]<-g.aipwcc.dicho(mmodels=c(model1,model2,model3),
+                                        pmodels=c(pi1,pi2,pi3),
+                                        data=DataSetList[[iiii]],
+                                        covariates=c("L0","X0","L1","X1","L2","X2"),
+                                        pattern = "Monotone",
+                                        regList=regList)}
 ```
 
 
