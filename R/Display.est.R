@@ -1,12 +1,14 @@
-Display.est<-function(est, sdest, p=0.95, digits = 3, ...){
+Display.est<-function(est, sdest, p=0.95, prob=T, digits = 3, ...){
   if(nrow(sdest)==ncol(sdest)){
   sdestM<-matrix(sapply(1:nrow(sdest),function(i)sdest[i,i]))
   } else {
   sdestM<-sdest
   }
-  pest<-2*(1-pnorm(abs(est/sdestM)))
+  if(prob){pest<-2*(1-pnorm(abs(est/sdestM)))} else {pest<-NULL}
   Disp<-cbind(est, sdestM, est-qnorm((p+1)/2)*sdestM, est+qnorm((p+1)/2)*sdestM,pest)
-  colnames(Disp)<-c("Est","Std.err","Lower","Upper","pValue")
+  if(prob){colnames(Disp)<-c("Est","Std.err","Lower","Upper","pValue")
+    } else {
+  colnames(Disp)<-c("Est","Std.err","Lower","Upper")}
   rownames(Disp)<-rownames(est)
   return(round(Disp,digits))
 }
