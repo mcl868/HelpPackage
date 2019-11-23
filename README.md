@@ -1,6 +1,7 @@
 # HelpPackage
 
 [Go back to homepage](https://mcl868.github.io/)
+
 ```markdown
 install.packages("devtools")
 devtools::install_github('mcl868/HelpPackage')
