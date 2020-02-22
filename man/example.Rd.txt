@@ -1,27 +1,24 @@
-\name{RemoveMissingObervation}
-\alias{RemoveMissingObervation}
+\name{dd}
+\alias{dd}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-RemoveMissingObervation
+The augmented inverse probability weighting
 }
 \description{
   A concise (1-5 lines) description of what the function does. 
 }
 \usage{
-RemoveMissingObervation(data, output, var.list, global=TRUE, ...)
+g.aipw.dicho(mmodels, pmodels, data, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
+  \item{mmodels}{
+%%     ~~Describe \code{x} here~~
+}
+  \item{pmodels}{
+%%     ~~Describe \code{x} here~~
+}
   \item{data}{
-%%     ~~Describe \code{x} here~~
-}
-  \item{output}{
-%%     ~~Describe \code{x} here~~
-}
-  \item{var.list}{
-%%
-}
-  \item{global}{
 %%
 }
 }

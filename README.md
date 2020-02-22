@@ -1,5 +1,7 @@
 # HelpPackage
 
+[Go back to homepage](https://mcl868.github.io/)
+
 ```markdown
 install.packages("devtools")
 devtools::install_github('mcl868/HelpPackage')
@@ -12,8 +14,9 @@ devtools::install_github('mcl868/HelpPackage')
 - [listSums](https://github.com/mcl868/HelpPackage/blob/master/README.md#listsums)
 - [mean.matrix](https://github.com/mcl868/HelpPackage/blob/master/README.md#meanmatrix)
 - [indicator](https://github.com/mcl868/HelpPackage/blob/master/README.md#indicator)
-- [missing.pattern](https://github.com/mcl868/HelpPackage/blob/master/README.md#missingpattern)
-- [prob.of.missing](https://github.com/mcl868/HelpPackage/blob/master/README.md#probofmissing)
+
+Look at [aipw](https://github.com/mcl868/packagedevelop/blob/master/README.md)
+to see more bla bla
 
 ### listMean and listVar
 Evaulate the mean and variance across a list 
@@ -78,20 +81,5 @@ mean.matrix(Xbar,na.rm=TRUE)
 ```markdown
 indicator(condition, x)
 ```
-### missing.pattern
-```markdown
-missing.pattern(response, 
-                covariates, 
-                data, 
-                pattern, ...)
-```
 
-### prob.of.missing
-```markdown
-prob.of.missing(object,
-                regression,
-                list.out = TRUE,
-                completecase = FALSE,
-                regList,
-                order=NULL, ...)
-```
+
