@@ -1,6 +1,6 @@
 # HelpPackage
 
-[Go back to homepage](https://mcl868.github.io/)
+[Go back to homepage](https://mcl868.github.io/software.html)
 
 ```markdown
 install.packages("devtools")
@@ -19,7 +19,7 @@ Look at [aipw](https://github.com/mcl868/packagedevelop/blob/master/README.md)
 to see more bla bla
 
 ### listMean and listVar
-Evaulate the mean and variance across a list 
+Evaulate the mean and variance across a list
 ```markdown
 N<-1000
 set.seed(3)
@@ -27,7 +27,7 @@ ListOfNorm<-list()
 for(jj in 1:N){
   ListOfNorm[[jj]]<-matrix(rnorm(2,2),dimnames = list(c("a","b"),"value"))
 }
-  
+
 listMean(ListOfNorm)
      value
 a 1.996752
@@ -39,14 +39,14 @@ a 1.0101092
 b 0.9807797
 ```
 ### listSums
-Evaulate the sum across a list 
+Evaulate the sum across a list
 ```markdown
 N<-100
 ListOfSum<-list()
 for(jj in 1:N){
   ListOfSum[[jj]]<-matrix(c((1/2)^jj,jj),dimnames = list(c("a","b"),"value"))
 }
-  
+
 listSums(ListOfSum)
   value
 a     1
@@ -81,5 +81,3 @@ mean.matrix(Xbar,na.rm=TRUE)
 ```markdown
 indicator(condition, x)
 ```
-
-
